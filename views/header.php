@@ -1,23 +1,40 @@
+<?php 
+    $cssURL =   PUBLIC_URL . 'css/';
+    $jsURL  =   PUBLIC_URL . 'js/';
+    
+    // Js
+    $fileJs = '';
+    if(!(empty($this->js))) {
+        foreach($this->js as $js) {
+            $fileJs .= '<script type="text/javascript" src="'.VIEW_URL . $js .'"></script><br />';      
+        }
+    }
+    
+    // Css
+    $fileCss = '';
+    if(!(empty($this->css))) {
+        foreach($this->css as $css) {
+            $fileJs .= '<link rel="stylesheet" media="screen" href="'.VIEW_PATH. $css .'" /><br />';
+        }
+    }
+    
+    $title  =   (isset($this->title)) ? $this->title : 'Management System';
+?>
 <!DOCTYPE html>
 <html> 
     <head>
         <meta charset="UTF-8">
-        <title>Management</title>
+        <title><?php echo $title; ?></title>
         <!-- Bootstrap -->
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-        <link href="assets/styles.css" rel="stylesheet" media="screen">
-        <link href="assets/DT_bootstrap.css" rel="stylesheet" media="screen">
-        <link href="css/jquery-ui.min.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" href="css/daterangepicker.css" />
-        <link rel="stylesheet" href="css/timestack.css" />
+        <link href="<?php echo $cssURL; ?>bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="<?php echo $cssURL; ?>bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+        <link href="<?php echo $cssURL; ?>styles.css" rel="stylesheet" media="screen">
         <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        
+        <?php echo $fileCss; ?>
     </head>
 <body>
 <div class="navbar">
@@ -34,10 +51,10 @@
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Daily Duration Management <b class="caret"></b></a>
                         <ul class="dropdown-menu" id="menu1">
                             <li>
-                                <a href="personal.php">Personal Management</a>
+                                <a href="index.php?controller=personal&action=index">Personal Management</a>
                             </li>
                             <li>
-                                <a href="group.php">Group Management</a>
+                                <a href="#">Group Management</a>
                             </li>
                             <li>
                                 <a href="#">All</a>
