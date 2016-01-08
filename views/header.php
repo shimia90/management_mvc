@@ -6,7 +6,7 @@
     $fileJs = '';
     if(!(empty($this->js))) {
         foreach($this->js as $js) {
-            $fileJs .= '<script type="text/javascript" src="'.VIEW_URL . $js .'"></script><br />';      
+            $fileJs .= '<script type="text/javascript" src="'.VIEW_URL . $js .'"></script>';      
         }
     }
     
@@ -14,7 +14,7 @@
     $fileCss = '';
     if(!(empty($this->css))) {
         foreach($this->css as $css) {
-            $fileJs .= '<link rel="stylesheet" media="screen" href="'.VIEW_PATH. $css .'" /><br />';
+            $fileCss .= '<link rel="stylesheet" media="screen" href="'.VIEW_URL. $css .'" />';
         }
     }
     

@@ -1,5 +1,5 @@
 <?php
-class Personal_Model extends Model {
+class Index_Model extends Model {
     
     /**
      * 

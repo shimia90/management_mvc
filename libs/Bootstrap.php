@@ -12,7 +12,7 @@ class Bootstrap extends Controller {
             exit();
         }
         $this->loadExistController();
-        
+        $this->callControllerMethod();
     }
     
     /**

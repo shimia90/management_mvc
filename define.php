@@ -14,6 +14,7 @@ define('PUBLIC_URL'             , ROOT_URL . 'public/');
 define('CSS_URL'                , ROOT_URL . 'css/');
 define('JS_URL'                 , ROOT_URL . 'js/');
 define('IMAGES_URL'             , ROOT_URL . 'images/');
+define	('VIEW_URL'			, ROOT_URL . 'views/');
 
 /********* DATABASE *********/
 define('DB_HOST'                , 'localhost');
